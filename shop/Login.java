@@ -34,6 +34,7 @@ public class Login {
 
         Customer customer = new Customer(firstName, lastName, mobile, email, city, state, street, zipCode, userName, password);
 
+        // login check
         while (true) {
 
             System.out.println("===============");
