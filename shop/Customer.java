@@ -1,6 +1,14 @@
 package shop;
 
 public class Customer {
+
+    Cart cart = new Cart();
+
+    public Cart getCart() {
+        return cart;
+    }
+
+
     // variable
     private String firstName;
     private String lastName;
@@ -11,10 +19,10 @@ public class Customer {
     private String street;
     private String address;
     private int zipCode;
-
     private String userName;
     private String password;
 
+    public Customer(){}
     // constructor
     public Customer(String firstName, String lastName, String mobile, String email, String city, String state, String street, int zipCode, String userName, String password) {
         this.firstName = firstName;
@@ -30,15 +38,18 @@ public class Customer {
         this.password = password;
 
     }
+
     // get user info
-    public String customerInfo(){
-        return this.firstName+" " +this.lastName;
+    public String customerInfo() {
+        return this.firstName + " " + this.lastName;
     }
+
     // for auth user
-    public String getUserName(){
+    public String getUserName() {
         return this.userName;
     }
-    public String getPassword(){
+
+    public String getPassword() {
         return this.password;
     }
 
