@@ -18,9 +18,9 @@ public abstract class Product {
         this.p_Description = p_Description;
     }
 
-//    public void setP_Quantity(int quantity){
-//        this.p_Quantity=quantity;
-//    }
+    public void setP_Quantity(int quantity){
+        this.p_Quantity=quantity;
+    }
 
    public String getP_Name() {
         return p_Name;
