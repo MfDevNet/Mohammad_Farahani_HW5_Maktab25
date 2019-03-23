@@ -5,12 +5,12 @@ public abstract class Product {
     private String p_Name;
     private String p_Brand;
     private int p_Quantity;
-    private long p_Price;
+    private int p_Price;
     private String p_Description;
 
     Product(){}
 
-    public Product(String p_Name, String p_Brand, int p_Quantity, long p_Price, String p_Description) {
+    public Product(String p_Name, String p_Brand, int p_Quantity, int p_Price, String p_Description) {
         this.p_Name = p_Name;
         this.p_Brand = p_Brand;
         this.p_Quantity = p_Quantity;
@@ -18,6 +18,9 @@ public abstract class Product {
         this.p_Description = p_Description;
     }
 
+//    public void setP_Quantity(int quantity){
+//        this.p_Quantity=quantity;
+//    }
 
    public String getP_Name() {
         return p_Name;
@@ -31,11 +34,11 @@ public abstract class Product {
         return p_Quantity;
     }
 
-    public long getP_Price() {
+    public int getP_Price() {
         return p_Price;
     }
 
     public String getP_Description() {
-        return p_Description;
+        return getP_Quantity()>0?"Is available":"No inventory";
     }
 }
