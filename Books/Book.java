@@ -7,7 +7,7 @@ public abstract class Book {
     public Book(String title){
         this.title=title;
         this.price=0.0;
-
+        setPrice();
 
     }
     //gettitle method

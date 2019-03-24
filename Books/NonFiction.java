@@ -4,7 +4,7 @@ public class NonFiction extends Book {
     //constructor called setprice method
     public NonFiction(String title) {
         super(title);
-        setPrice();
+//        setPrice();
     }
     // implement setprice
     public void setPrice() {
