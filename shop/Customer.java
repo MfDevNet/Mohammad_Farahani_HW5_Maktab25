@@ -2,7 +2,7 @@ package shop;
 
 public class Customer {
 
-    Cart cart = new Cart();
+    private Cart cart = new Cart();
 
     public Cart getCart() {
         return cart;
@@ -18,13 +18,13 @@ public class Customer {
     private String state;
     private String street;
     private String address;
-    private int zipCode;
+    private String zipCode;
     private String userName;
     private String password;
 
     public Customer(){}
     // constructor
-    public Customer(String firstName, String lastName, String mobile, String email, String city, String state, String street, int zipCode, String userName, String password) {
+    public Customer(String firstName, String lastName, String mobile, String email, String city, String state, String street, String  zipCode, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobile = mobile;
@@ -39,6 +39,14 @@ public class Customer {
 
     }
 
+    public String getInfoCustomer(){
+        return String.format(
+                "Mr/Ms %s \n"+
+                        "Mobile %s \n"+
+                        "Address %s  ZipCode %s",customerInfo(),this.mobile,this.address,this.zipCode
+
+        );
+    }
     // get user info
     public String customerInfo() {
         return this.firstName + " " + this.lastName;
