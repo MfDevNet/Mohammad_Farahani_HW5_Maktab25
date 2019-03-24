@@ -24,8 +24,7 @@ public class Login {
         System.out.print("Enter street : ");
         String street = scanner.nextLine();
         System.out.print("Enter zipCode : ");
-        int zipCode = scanner.nextInt();
-        scanner.nextLine();
+        String zipCode = scanner.nextLine();
         System.out.println("===============");
         System.out.print("Enter userName : ");
         String userName = scanner.nextLine();
@@ -45,7 +44,6 @@ public class Login {
             String pass = scanner.nextLine();
             if (uname.equals(customer.getUserName()) && pass.equals(customer.getPassword())) break;
         }
-        scanner.close();
         return customer;
     }
 
