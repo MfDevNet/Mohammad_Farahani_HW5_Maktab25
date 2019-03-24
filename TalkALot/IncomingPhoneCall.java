@@ -11,6 +11,7 @@ public class IncomingPhoneCall extends PhoneCall {
         callTime = time;
         callPrice = 0.02;
     }
+
     // method get phone number override
     @Override
     public String getPhoneNumber() {
