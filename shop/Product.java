@@ -5,6 +5,7 @@ public abstract class Product {
     private String p_Name;
     private String p_Brand;
     private int p_Quantity;
+    private int p_QuantityShop;
     private int p_Price;
     private String p_Description;
 
@@ -14,8 +15,10 @@ public abstract class Product {
         this.p_Name = p_Name;
         this.p_Brand = p_Brand;
         this.p_Quantity = p_Quantity;
+        this.p_QuantityShop=p_Quantity;
         this.p_Price = p_Price;
         this.p_Description = p_Description;
+
     }
 
     public void setP_Quantity(int quantity){
@@ -40,5 +43,13 @@ public abstract class Product {
 
     public String getP_Description() {
         return getP_Quantity()>0?"Is available":"No inventory";
+    }
+
+    public int getP_QuantityShop() {
+        return p_QuantityShop;
+    }
+
+    public void setP_QuantityShop(int p_QuantityShop) {
+        this.p_QuantityShop = p_QuantityShop;
     }
 }
