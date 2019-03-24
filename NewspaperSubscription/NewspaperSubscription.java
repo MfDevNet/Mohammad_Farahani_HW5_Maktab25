@@ -1,11 +1,12 @@
 package NewspaperSubscription;
 
 public abstract class NewspaperSubscription {
-
+    // variable
     private String subscriberName;
     protected String address;
     private double subscriptionRate;
 
+    // block setter and getter
     public void setSubscriberName(String subscriberName) {
         this.subscriberName = subscriberName;
     }
@@ -23,7 +24,7 @@ public abstract class NewspaperSubscription {
     public void setSubscriptionRate(double subscriptionRate) {
         this.subscriptionRate = subscriptionRate;
     }
-
+    //abstract method
     public abstract String setAddress(String address);
 
 
