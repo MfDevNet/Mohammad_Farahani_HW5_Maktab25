@@ -9,6 +9,6 @@ public class NonMetalElement extends Element {
     // override method describeElement in super class
     @Override
     public String describeElement() {
-        return(super.getSymbol() + "non-metal. atomic number:" + super.getAtomicNumber() + " weight: " + super.getAtomicWeight() );
+        return(super.getSymbol() + " non-metal. atomic number:" + super.getAtomicNumber() + " weight: " + super.getAtomicWeight() );
     }
 }
