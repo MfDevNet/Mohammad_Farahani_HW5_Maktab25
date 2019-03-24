@@ -8,11 +8,11 @@ public class PhysicalNewspaperSubscription extends NewspaperSubscription {
         if(haveDigit) {
             this.address = address;
             setSubscriptionRate(15.00);
-            return("That is a valid address.");
+            return("valid address.");
         }
         else {
             setSubscriptionRate(0.00);
-            return("That is a invalid address.needs one digit in your address");
+            return("invalid address.needs number in address");
         }
     }
 
