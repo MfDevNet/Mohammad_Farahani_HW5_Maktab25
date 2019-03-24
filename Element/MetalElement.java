@@ -11,7 +11,7 @@ public class MetalElement extends Element {
     // override method describeElement in super class
     @Override
     public String describeElement() {
-        return(super.getSymbol() + " is a metal element. It has an atomic number of " + super.getAtomicNumber() + " and a weight of " + super.getAtomicWeight() );
+        return(super.getSymbol() + " metal . atomic number :" + super.getAtomicNumber() + " weight:" + super.getAtomicWeight() );
     }
 
 }
