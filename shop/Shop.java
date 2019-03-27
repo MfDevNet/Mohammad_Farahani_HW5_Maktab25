@@ -5,9 +5,15 @@ import java.util.Scanner;
 public class Shop {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Customer customer ;
+
+        Customer customer=null ;
+        Customer customer1 ;
+        Customer customer2 ;
+
        // login user
-        customer = Login.login();
+        customer1 = Login.login();
+        customer2 = Login.login();
+        customer=customer1;
         InitialShop product = new InitialShop();
 //
 //        declare menu
@@ -22,7 +28,7 @@ public class Shop {
             System.out.println("3)Add to cart");
             System.out.println("4)Remove of cart");
             System.out.println("5)the payment");
-
+            System.out.println("6)change user");
             System.out.println("9)Exit");
             System.out.print("Select Item : ");
             menu = scanner.nextInt();
@@ -42,7 +48,7 @@ public class Shop {
                     scanner.nextLine();
                     String select = scanner.nextLine();
                     for (Product productSelect : product.getProducts()) {
-                        if (productSelect.getP_Name().equals(select)) {
+                        if (productSelect.getName().equals(select)) {
                             customer.getCart().addToCart(productSelect);
                             break;
                         }
@@ -56,7 +62,7 @@ public class Shop {
                     scanner.nextLine();
                     String select = scanner.nextLine();
                     for (Product productSelect : customer.getCart().getProducts()) {
-                        if (productSelect.getP_Name().equals(select)) {
+                        if (productSelect.getName().equals(select)) {
                             customer.getCart().removeOfCart(productSelect, false);
                             break;
                         }
@@ -67,6 +73,16 @@ public class Shop {
                     payment(customer);
                     break;
                 }
+                case 6:{
+                    System.out.print("Enetr userName");
+                    String user=scanner.next();
+                             if(customer.getUserName()==customer1.getUserName())
+                                customer=customer2;
+                            else if(customer.getUserName()==customer2.getUserName())
+                                customer=customer1;
+                            break;
+                        }
+
                 case 9: {
                     return;
                 }
@@ -84,7 +100,7 @@ public class Shop {
             if (product == null) {
                 continue;
             }
-            product.setP_QuantityShop(product.getP_Quantity());
+            product.setQuantityShop(product.getQuantity());
             customer.getCart().removeOfCart(product, true);
         }
         System.out.println("---------------------");
