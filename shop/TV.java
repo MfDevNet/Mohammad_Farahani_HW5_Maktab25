@@ -15,6 +15,7 @@ public class TV extends Digital {
         return portable ? "Hast" : "Nist";
     }
 
+    @Override
     public String toString() {
         return String.format(
                 "----------------------\n" +

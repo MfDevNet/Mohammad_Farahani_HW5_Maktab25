@@ -5,7 +5,7 @@ public class Sport extends Shoe {
     public Sport(int barCode,String Name, String Brand, int Quantity, int Price, String Description, String type, int shoe_size) {
         super(barCode,Name, Brand, Quantity, Price, Description, type, shoe_size);
     }
-
+    @Override
     public String toString(){
         return String.format(
                 "----------------------\n"+

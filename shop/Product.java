@@ -61,4 +61,5 @@ public abstract class Product {
 
         return barCode;
     }
+    public abstract String toString();
 }

@@ -12,7 +12,8 @@ public class Radio extends Digital {
         return portable?"Hast":"Nist";
     }
 
-     public  String toString(){
+    @Override
+    public  String toString(){
         return String.format(
                 "----------------------\n"+
                         "Product BarCode : %s\n"+

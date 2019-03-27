@@ -6,7 +6,7 @@ public class Magazine extends Book {
     public Magazine(int barCode,String Name, String Brand, int Quantity, int Price, String Description, int type, String author) {
         super(barCode,Name, Brand, Quantity, Price, Description, type, author);
     }
-
+    @Override
     public String toString(){
         return String.format(
                 "----------------------\n"+
