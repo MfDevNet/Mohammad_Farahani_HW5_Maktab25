@@ -2,54 +2,54 @@ package shop;
 
 public abstract class Product {
 
-    private String name;
-    private String brand;
-    private int quantity;
-    private int quantityShop;
-    private int price;
-    private String description;
+    private String p_Name;
+    private String p_Brand;
+    private int p_Quantity;
+    private int p_QuantityShop;
+    private int p_Price;
+    private String p_Description;
 
     Product(){}
 
-    public Product(String name, String brand, int quantity, int price, String description) {
-        this.name = name;
-        this.brand = brand;
-        this.quantity = quantity;
-        this.quantityShop = quantity;
-        this.price = price;
-        this.description = this.description;
+    public Product(String p_Name, String p_Brand, int p_Quantity, int p_Price, String p_Description) {
+        this.p_Name = p_Name;
+        this.p_Brand = p_Brand;
+        this.p_Quantity = p_Quantity;
+        this.p_QuantityShop=p_Quantity;
+        this.p_Price = p_Price;
+        this.p_Description = p_Description;
 
     }
 
-    public void setQuantity(int quantity){
-        this.quantity =quantity;
+    public void setP_Quantity(int quantity){
+        this.p_Quantity=quantity;
     }
 
-   public String getName() {
-        return name;
+   public String getP_Name() {
+        return p_Name;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getP_Brand() {
+        return p_Brand;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getP_Quantity() {
+        return p_Quantity;
     }
 
-    public int getPrice() {
-        return price;
+    public int getP_Price() {
+        return p_Price;
     }
 
-    public String getDescription() {
-        return getQuantity()>0?"Is available":"No inventory";
+    public String getP_Description() {
+        return getP_Quantity()>0?"Is available":"No inventory";
     }
 
-    public int getQuantityShop() {
-        return quantityShop;
+    public int getP_QuantityShop() {
+        return p_QuantityShop;
     }
 
-    public void setQuantityShop(int quantityShop) {
-        this.quantityShop = quantityShop;
+    public void setP_QuantityShop(int p_QuantityShop) {
+        this.p_QuantityShop = p_QuantityShop;
     }
 }

@@ -16,19 +16,19 @@ public class Cart {
             System.out.println("---------------------");
             return;
         }
-        if (product.getQuantity() == 0) {
+        if (product.getP_Quantity() == 0) {
             System.out.println("---------------------");
             System.out.println("Product No inventory");
             System.out.println("---------------------");
             return;
-        } else if (product.getQuantity() != 0) {
+        } else if (product.getP_Quantity() != 0) {
             System.out.println("---------------------");
             System.out.println("add to cart ");
             for (int i = 0; i < products.length; i++) {
                 if (products[i] == null) {
                     products[i] = product;
                     System.out.println(products[i]);
-                    product.setQuantity(product.getQuantity() - 1);
+                    product.setP_Quantity(product.getP_Quantity() - 1);
                     cartFullFlag++;
                     return;
                 } else continue;
@@ -44,13 +44,13 @@ public class Cart {
                 continue;
 
             }
-            if (products[i].getName() == product.getName()) {
+            if (products[i].getP_Name() == product.getP_Name()) {
                 products[i] = null;
-                if (isPayment == false) product.setQuantity(product.getQuantity() + 1);
+                if (isPayment == false) product.setP_Quantity(product.getP_Quantity() + 1);
                 cartFullFlag--;
                 if (isPayment == false) {
                     System.out.println("---------------------");
-                    System.out.println("Remove of cart : " + product.getName() + " Brand: " + product.getBrand());
+                    System.out.println("Remove of cart : " + product.getP_Name() + " Brand: " + product.getP_Brand());
                     System.out.println("---------------------");
                 }
                 if (isPayment == true) cartFullFlag = 0;
@@ -76,18 +76,18 @@ public class Cart {
             }
 
             if (products[i] instanceof Digital) {
-                System.out.println("Digital Product Name:" + products[i].getName() + " Brand:" + products[i].getBrand() + " Price:" + products[i].getPrice());
-                totalPrice += products[i].getPrice();
+                System.out.println("Digital Product Name:" + products[i].getP_Name() + " Brand:" + products[i].getP_Brand() + " Price:" + products[i].getP_Price());
+                totalPrice += products[i].getP_Price();
                 totalQuantity++;
             }
             if (products[i] instanceof Book) {
-                System.out.println("Book    Product Name:" + products[i].getName() + " Brand:" + products[i].getBrand() + " Price:" + products[i].getPrice());
-                totalPrice += products[i].getPrice();
+                System.out.println("Book    Product Name:" + products[i].getP_Name() + " Brand:" + products[i].getP_Brand() + " Price:" + products[i].getP_Price());
+                totalPrice += products[i].getP_Price();
                 totalQuantity++;
             }
             if (products[i] instanceof Shoe) {
-                System.out.println("Shoe    Product Name:" + products[i].getName() + " Brand:" + products[i].getBrand() + " Price:" + products[i].getPrice());
-                totalPrice += products[i].getPrice();
+                System.out.println("Shoe    Product Name:" + products[i].getP_Name() + " Brand:" + products[i].getP_Brand() + " Price:" + products[i].getP_Price());
+                totalPrice += products[i].getP_Price();
                 totalQuantity++;
             }
 

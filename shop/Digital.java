@@ -25,7 +25,7 @@ public class Digital extends Product {
                         "Product Quantity  : %s\n"+
                         "Product Price  : %s$\n"+
                         "Product Description  : %s\n"+
-                        "Product Portable  : %s\n",tvRadio[this.product_Type], getName(), getBrand(), getQuantity(), getPrice(), getDescription(),getPortable(this.Portable));
+                        "Product Portable  : %s\n",tvRadio[this.product_Type],getP_Name(),getP_Brand(),getP_Quantity(),getP_Price(),getP_Description(),getPortable(this.Portable));
 
     }
 

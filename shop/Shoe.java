@@ -20,7 +20,7 @@ public class Shoe extends Product {
                         "Product Quantity  : %s\n"+
                         "Product Price  : %s$\n"+
                         "Product Description  : %s\n"+
-                        "Product Size  : %s\n",sportClassic[this.shoe_Type], getName(), getBrand(), getQuantity(), getPrice(), getDescription(),this.shoe_size);
+                        "Product Size  : %s\n",sportClassic[this.shoe_Type],getP_Name(),getP_Brand(),getP_Quantity(),getP_Price(),getP_Description(),this.shoe_size);
 
     }
 }

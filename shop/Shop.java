@@ -6,14 +6,15 @@ public class Shop {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Customer customer=null ;
-        Customer customer1 ;
-        Customer customer2 ;
+        Customer[] customers = new Customer[10];
+        Customer customer = null;
+        // login user
+        Login login = new Login();
 
-       // login user
-        customer1 = Login.login();
-        customer2 = Login.login();
-        customer=customer1;
+//        customer1 = Login.login();
+//        customer2 = Login.login();
+//        customer=customer1;
+
         InitialShop product = new InitialShop();
 //
 //        declare menu
@@ -21,34 +22,45 @@ public class Shop {
         System.out.println("Welcome to Shop");
         int menu = 0;
         while (exit == true) {
+            System.out.println();
             System.out.println("-----------menu----------");
-            System.out.printf("Mr/Ms %s\n", customer.customerInfo());
+            System.out.printf("Mr/Ms %s\n", customer == null ? "Guest" : customer.customerInfo());
             System.out.println("1)Show shop Product");
             System.out.println("2)show Cart Customer");
             System.out.println("3)Add to cart");
             System.out.println("4)Remove of cart");
             System.out.println("5)the payment");
-            System.out.println("6)change user");
+            System.out.println("6)add Customer");
+            System.out.println("7)Login/Change Customer");
+
+
             System.out.println("9)Exit");
             System.out.print("Select Item : ");
             menu = scanner.nextInt();
+            System.out.println();
             switch (menu) {
                 case 1: {
-                    for (Product productShow : product.getProducts()) {
-                        System.out.println(productShow);
+                    if (customer != null)
+                        for (Product productShow : product.getProducts()) {
+                            System.out.println(productShow);
+                        }
+                    else {
+                        System.out.println("Please Register Customer");
                     }
                     break;
                 }
                 case 2: {
+                    if (customer == null) break;
                     customer.getCart().cartDisplay();
                     break;
                 }
                 case 3: {
+                    if (customer == null) break;
                     System.out.print("Enter Product Name");
                     scanner.nextLine();
                     String select = scanner.nextLine();
                     for (Product productSelect : product.getProducts()) {
-                        if (productSelect.getName().equals(select)) {
+                        if (productSelect.getP_Name().equals(select)) {
                             customer.getCart().addToCart(productSelect);
                             break;
                         }
@@ -57,12 +69,13 @@ public class Shop {
                     break;
                 }
                 case 4: {
+                    if (customer == null) break;
                     customer.getCart().cartDisplay();
                     System.out.print("Enter Product Name");
                     scanner.nextLine();
                     String select = scanner.nextLine();
                     for (Product productSelect : customer.getCart().getProducts()) {
-                        if (productSelect.getName().equals(select)) {
+                        if (productSelect.getP_Name().equals(select)) {
                             customer.getCart().removeOfCart(productSelect, false);
                             break;
                         }
@@ -70,18 +83,31 @@ public class Shop {
                     break;
                 }
                 case 5: {
+                    if (customer == null) break;
                     payment(customer);
                     break;
                 }
-                case 6:{
-                    System.out.print("Enetr userName");
-                    String user=scanner.next();
-                             if(customer.getUserName()==customer1.getUserName())
-                                customer=customer2;
-                            else if(customer.getUserName()==customer2.getUserName())
-                                customer=customer1;
-                            break;
-                        }
+
+                case 6: {
+                    Customer addCustomer = login.addCustomer();
+                    for (int i = 0; i < customers.length; i++) {
+                        if (customers[i] != null)continue;
+                            customers[i] = addCustomer;
+                        System.out.println(customers[i].getInfoCustomer());
+                        break;
+                    }
+
+
+                    break;
+
+                }
+
+                case 7: {
+                    // login user
+                    customer = login.login(customers);
+                    break;
+                }
+               
 
                 case 9: {
                     return;
@@ -100,7 +126,7 @@ public class Shop {
             if (product == null) {
                 continue;
             }
-            product.setQuantityShop(product.getQuantity());
+            product.setP_QuantityShop(product.getP_Quantity());
             customer.getCart().removeOfCart(product, true);
         }
         System.out.println("---------------------");

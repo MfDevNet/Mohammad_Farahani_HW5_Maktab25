@@ -22,7 +22,7 @@ public class Book extends Product {
                         "Product Quantity  : %s\n"+
                         "Product Price  : %s$\n"+
                         "Product Description  : %s\n"+
-                        "Product book_Author  : %s\n",bookMag[this.book_Type], getName(), getBrand(), getQuantity(), getPrice(), getDescription(),this.book_Author);
+                        "Product book_Author  : %s\n",bookMag[this.book_Type],getP_Name(),getP_Brand(),getP_Quantity(),getP_Price(),getP_Description(),this.book_Author);
 
     }
 

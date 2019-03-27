@@ -22,7 +22,10 @@ public class Customer {
     private String userName;
     private String password;
 
-    public Customer(){}
+    public Customer(){
+        this.firstName="";
+                this.lastName="";
+    }
     // constructor
     public Customer(String firstName, String lastName, String mobile, String email, String city, String state, String street, String  zipCode, String userName, String password) {
         this.firstName = firstName;
