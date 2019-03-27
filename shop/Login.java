@@ -17,6 +17,7 @@ public class Login {
             String pass = scanner.nextLine();
             for (Customer customer:customers){
                 if (uname.equals(customer.getUserName()) && pass.equals(customer.getPassword())){
+                    System.out.println("Login Success");
                     return customer;
 
                 }
@@ -52,7 +53,7 @@ public class Login {
         String userName = scanner.nextLine();
         System.out.print("Enter password : ");
         String password = scanner.nextLine();
-
+        System.out.println("Register Success");
         Customer customer = new Customer(firstName, lastName, mobile, email, city, state, street, zipCode, userName, password);
         return customer;
     }

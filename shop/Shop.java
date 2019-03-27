@@ -8,19 +8,17 @@ public class Shop {
 
         Customer[] customers = new Customer[10];
         Customer customer = null;
-        // login user
         Login login = new Login();
 
-//        customer1 = Login.login();
-//        customer2 = Login.login();
-//        customer=customer1;
-
+        // initial Shop
         InitialShop product = new InitialShop();
-//
-//        declare menu
+
+
+        // declare menu
         boolean exit = true;
         System.out.println("Welcome to Shop");
         int menu = 0;
+
         while (exit == true) {
             System.out.println();
             System.out.println("-----------menu----------");
@@ -30,7 +28,7 @@ public class Shop {
             System.out.println("3)Add to cart");
             System.out.println("4)Remove of cart");
             System.out.println("5)the payment");
-            System.out.println("6)add Customer");
+            System.out.println("6)Register Customer");
             System.out.println("7)Login/Change Customer");
 
 
@@ -38,6 +36,7 @@ public class Shop {
             System.out.print("Select Item : ");
             menu = scanner.nextInt();
             System.out.println();
+
             switch (menu) {
                 case 1: {
                     if (customer != null)
@@ -45,7 +44,7 @@ public class Shop {
                             System.out.println(productShow);
                         }
                     else {
-                        System.out.println("Please Register Customer");
+                        System.out.println("Please Register/Login Customer");
                     }
                     break;
                 }
@@ -56,11 +55,10 @@ public class Shop {
                 }
                 case 3: {
                     if (customer == null) break;
-                    System.out.print("Enter Product Name");
-                    scanner.nextLine();
-                    String select = scanner.nextLine();
+                    System.out.print("Enter BarCode");
+                    int select = scanner.nextInt();
                     for (Product productSelect : product.getProducts()) {
-                        if (productSelect.getP_Name().equals(select)) {
+                        if (productSelect.getBarCode()==(select)) {
                             customer.getCart().addToCart(productSelect);
                             break;
                         }
@@ -71,11 +69,10 @@ public class Shop {
                 case 4: {
                     if (customer == null) break;
                     customer.getCart().cartDisplay();
-                    System.out.print("Enter Product Name");
-                    scanner.nextLine();
-                    String select = scanner.nextLine();
+                    System.out.print("Enter BarCode");
+                    int select = scanner.nextInt();
                     for (Product productSelect : customer.getCart().getProducts()) {
-                        if (productSelect.getP_Name().equals(select)) {
+                        if (productSelect.getBarCode()==select) {
                             customer.getCart().removeOfCart(productSelect, false);
                             break;
                         }
@@ -93,22 +90,20 @@ public class Shop {
                     for (int i = 0; i < customers.length; i++) {
                         if (customers[i] != null)continue;
                             customers[i] = addCustomer;
-                        System.out.println(customers[i].getInfoCustomer());
-                        break;
+                            break;
                     }
-
-
                     break;
-
                 }
-
                 case 7: {
                     // login user
                     customer = login.login(customers);
                     break;
                 }
-               
 
+                case 8: {
+                    System.out.println(customer.getInfoCustomer());
+                    break;
+                }
                 case 9: {
                     return;
                 }
@@ -126,7 +121,7 @@ public class Shop {
             if (product == null) {
                 continue;
             }
-            product.setP_QuantityShop(product.getP_Quantity());
+            product.setQuantityShop(product.getQuantity());
             customer.getCart().removeOfCart(product, true);
         }
         System.out.println("---------------------");
