@@ -1,6 +1,6 @@
 package shop;
 
-public class Magazine extends Book {
+public class Magazine extends Readable {
 
 
     public Magazine(int barCode,String Name, String Brand, int Quantity, int Price, String Description, int type, String author) {

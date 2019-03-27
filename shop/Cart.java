@@ -80,8 +80,8 @@ public class Cart {
                 totalPrice += products[i].getPrice();
                 totalQuantity++;
             }
-            if (products[i] instanceof Book) {
-                System.out.println("Book    Product Name:" + products[i].getName() + " Brand:" + products[i].getBrand() + " Price:" + products[i].getPrice()+" BarCode: "+products[i].getBarCode());
+            if (products[i] instanceof Readable) {
+                System.out.println("Readable    Product Name:" + products[i].getName() + " Brand:" + products[i].getBrand() + " Price:" + products[i].getPrice()+" BarCode: "+products[i].getBarCode());
                 totalPrice += products[i].getPrice();
                 totalQuantity++;
             }

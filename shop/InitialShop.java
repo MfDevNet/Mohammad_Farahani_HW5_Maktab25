@@ -30,7 +30,7 @@ public class InitialShop {
                 if (setType == 0) {
                     products[i] = new Magazine(i+1000,"Magazine", brand_Book[rnd.nextInt(4)], rnd.nextInt(5) + 1, rnd.nextInt(200) + 100, "", rnd.nextInt(2), book_Author[rnd.nextInt(5)]);
                 } else {
-                    products[i] = new Readable(i+1000,"Readable", brand_Book[rnd.nextInt(4)], rnd.nextInt(5) + 1, rnd.nextInt(200) + 100, "", rnd.nextInt(2), book_Author[rnd.nextInt(5)]);
+                    products[i] = new Book(i+1000,"Book", brand_Book[rnd.nextInt(4)], rnd.nextInt(5) + 1, rnd.nextInt(200) + 100, "", rnd.nextInt(2), book_Author[rnd.nextInt(5)]);
                 }
 
             } else if (i >= ((products.length) * 60 / 100)) {
