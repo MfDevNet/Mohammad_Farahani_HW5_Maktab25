@@ -3,7 +3,30 @@ package shop;
 import java.util.Scanner;
 
 public class Login {
-    public static Customer login() {
+    public Customer login(Customer[] customers) {
+        Scanner scanner = new Scanner(System.in);
+
+        // login check
+        while (true) {
+
+            System.out.println("===============");
+            System.out.println("Please login ");
+            System.out.print("Enter username : ");
+            String uname = scanner.nextLine();
+            System.out.print("Enter Password : ");
+            String pass = scanner.nextLine();
+            for (Customer customer:customers){
+                if (uname.equals(customer.getUserName()) && pass.equals(customer.getPassword())){
+                    System.out.println("Login Success");
+                    return customer;
+
+                }
+            }
+
+        }
+    }
+
+    public Customer addCustomer(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Register Form ");
@@ -30,20 +53,8 @@ public class Login {
         String userName = scanner.nextLine();
         System.out.print("Enter password : ");
         String password = scanner.nextLine();
-
+        System.out.println("Register Success");
         Customer customer = new Customer(firstName, lastName, mobile, email, city, state, street, zipCode, userName, password);
-
-        // login check
-        while (true) {
-
-            System.out.println("===============");
-            System.out.println("Please login ");
-            System.out.print("Enter username : ");
-            String uname = scanner.nextLine();
-            System.out.print("Enter Password : ");
-            String pass = scanner.nextLine();
-            if (uname.equals(customer.getUserName()) && pass.equals(customer.getPassword())) break;
-        }
         return customer;
     }
 
